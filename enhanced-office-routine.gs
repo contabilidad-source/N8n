@@ -4,6 +4,7 @@
  *
  * Features:
  * - Multiple routine types (Core, Full Body, Stretching, Quick Breaks)
+ * - Each exercise in separate row for easy tracking
  * - Custom menu for easy access
  * - Configurable time blocks
  * - Professional formatting
@@ -20,7 +21,8 @@ const CONFIG = {
     HEADER: '#4285f4',
     HEADER_TEXT: '#ffffff',
     TIME_COL: '#e8f0fe',
-    ALT_ROW: '#f8f9fa'
+    ALT_ROW: '#f8f9fa',
+    TIME_BLOCK_BORDER: '#cccccc'
   },
   SHEET_NAMES: {
     CORE: 'Core Routine',
@@ -70,45 +72,135 @@ function generateCoreRoutine() {
     blocks: [
       {
         time: "09:00",
-        exercises: "Seated Pelvic Tilts, Braced Belly Breathing, Scapular Setting",
-        sets: "10 tilts / 5 breaths / 5 × 5s holds",
-        explanation: "Activate deep core and set neutral posture for the day.",
-        intensity: "Low"
+        exercises: [
+          {
+            name: "Seated Pelvic Tilts",
+            sets: "10 tilts",
+            explanation: "Activate deep core and establish neutral pelvic position.",
+            intensity: "Low"
+          },
+          {
+            name: "Braced Belly Breathing",
+            sets: "5 breaths",
+            explanation: "Engage transverse abdominis while maintaining breathing.",
+            intensity: "Low"
+          },
+          {
+            name: "Scapular Setting",
+            sets: "5 × 5s holds",
+            explanation: "Set shoulder blades to support upper back posture.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "10:00",
-        exercises: "Chair Leg Raises, Standing Desk Plank Press, Wall Angels",
-        sets: "3 × 10 / 2 × 30s / 10 reps",
-        explanation: "Strengthen abs and upper back while keeping spine neutral.",
-        intensity: "Medium"
+        exercises: [
+          {
+            name: "Chair Leg Raises",
+            sets: "3 × 10",
+            explanation: "Strengthen lower abs while maintaining neutral spine.",
+            intensity: "Medium"
+          },
+          {
+            name: "Standing Desk Plank Press",
+            sets: "2 × 30s",
+            explanation: "Build core endurance in anti-extension position.",
+            intensity: "Medium"
+          },
+          {
+            name: "Wall Angels",
+            sets: "10 reps",
+            explanation: "Strengthen upper back while opening chest.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "11:00",
-        exercises: "Doorway Chest Stretch, Thoracic Extension over Chair",
-        sets: "2 × 30s each / 8 reps",
-        explanation: "Open chest and extend upper spine to undo slouching.",
-        intensity: "Low"
+        exercises: [
+          {
+            name: "Doorway Chest Stretch",
+            sets: "2 × 30s each",
+            explanation: "Open pectoral muscles shortened by desk posture.",
+            intensity: "Low"
+          },
+          {
+            name: "Thoracic Extension over Chair",
+            sets: "8 reps",
+            explanation: "Restore upper spine extension to counter slouching.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "13:00",
-        exercises: "Standing Knee-to-Elbow Crunches, Bird-Dog at Desk, Hip Flexor Stretch",
-        sets: "15 each / 8 each side / 2 × 30s",
-        explanation: "Train obliques and glutes, relieve tight hip flexors from sitting.",
-        intensity: "Medium"
+        exercises: [
+          {
+            name: "Standing Knee-to-Elbow Crunches",
+            sets: "15 each side",
+            explanation: "Train obliques for rotational core control.",
+            intensity: "Medium"
+          },
+          {
+            name: "Bird-Dog at Desk",
+            sets: "8 each side",
+            explanation: "Build anti-rotation strength and glute stability.",
+            intensity: "Medium"
+          },
+          {
+            name: "Hip Flexor Stretch",
+            sets: "2 × 30s each",
+            explanation: "Release tight hip flexors from prolonged sitting.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "15:00",
-        exercises: "Scapular Setting, Doorway Stretch, Seated Twist",
-        sets: "5 × 5s holds / 30s / 5 each side",
-        explanation: "Re-activate upper back and restore rotation through the spine.",
-        intensity: "Low"
+        exercises: [
+          {
+            name: "Scapular Setting",
+            sets: "5 × 5s holds",
+            explanation: "Re-activate upper back after afternoon fatigue.",
+            intensity: "Low"
+          },
+          {
+            name: "Doorway Stretch",
+            sets: "30s",
+            explanation: "Second chest opening to maintain posture.",
+            intensity: "Low"
+          },
+          {
+            name: "Seated Twist",
+            sets: "5 each side",
+            explanation: "Restore thoracic rotation for spinal health.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "16:00",
-        exercises: "Chair Leg Raises, Standing Desk Plank Press, Braced Breathing",
-        sets: "3 × 12 / 45s / 5 breaths",
-        explanation: "Finish day with core endurance and calm breathing reset.",
-        intensity: "Medium"
+        exercises: [
+          {
+            name: "Chair Leg Raises",
+            sets: "3 × 12",
+            explanation: "End-of-day core endurance work.",
+            intensity: "Medium"
+          },
+          {
+            name: "Standing Desk Plank Press",
+            sets: "45s",
+            explanation: "Final anti-extension hold to finish strong.",
+            intensity: "Medium"
+          },
+          {
+            name: "Braced Breathing",
+            sets: "5 breaths",
+            explanation: "Calm nervous system and reset breathing pattern.",
+            intensity: "Low"
+          }
+        ]
       }
     ]
   };
@@ -126,45 +218,141 @@ function generateFullBodyRoutine() {
     blocks: [
       {
         time: "09:00",
-        exercises: "Desk Push-ups, Chair Squats, Arm Circles",
-        sets: "3 × 10 / 3 × 15 / 10 each direction",
-        explanation: "Wake up major muscle groups with compound movements.",
-        intensity: "Medium"
+        exercises: [
+          {
+            name: "Desk Push-ups",
+            sets: "3 × 10",
+            explanation: "Wake up chest, shoulders, and triceps.",
+            intensity: "Medium"
+          },
+          {
+            name: "Chair Squats",
+            sets: "3 × 15",
+            explanation: "Activate legs and glutes for the day.",
+            intensity: "Medium"
+          },
+          {
+            name: "Arm Circles",
+            sets: "10 each direction",
+            explanation: "Mobilize shoulders and upper back.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "10:30",
-        exercises: "Wall Sits, Tricep Dips on Chair, Calf Raises",
-        sets: "3 × 30s / 3 × 12 / 3 × 20",
-        explanation: "Build leg and arm strength during mid-morning break.",
-        intensity: "High"
+        exercises: [
+          {
+            name: "Wall Sits",
+            sets: "3 × 30s",
+            explanation: "Build leg endurance and mental toughness.",
+            intensity: "High"
+          },
+          {
+            name: "Tricep Dips on Chair",
+            sets: "3 × 12",
+            explanation: "Strengthen back of arms.",
+            intensity: "Medium"
+          },
+          {
+            name: "Calf Raises",
+            sets: "3 × 20",
+            explanation: "Strengthen lower legs and improve circulation.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "12:00",
-        exercises: "Standing Lunges, Desk Rows, Shoulder Shrugs",
-        sets: "3 × 10 each / 3 × 15 / 3 × 15",
-        explanation: "Pre-lunch activation for legs, back, and shoulders.",
-        intensity: "Medium"
+        exercises: [
+          {
+            name: "Standing Lunges",
+            sets: "3 × 10 each",
+            explanation: "Unilateral leg work for balance and strength.",
+            intensity: "Medium"
+          },
+          {
+            name: "Desk Rows",
+            sets: "3 × 15",
+            explanation: "Pull movement to counter pushing and slouching.",
+            intensity: "Medium"
+          },
+          {
+            name: "Shoulder Shrugs",
+            sets: "3 × 15",
+            explanation: "Strengthen upper traps and release tension.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "14:00",
-        exercises: "Seated Leg Extensions, Wall Push-ups, Neck Rolls",
-        sets: "3 × 12 each / 3 × 12 / 5 each direction",
-        explanation: "Post-lunch energy boost targeting full body.",
-        intensity: "Low"
+        exercises: [
+          {
+            name: "Seated Leg Extensions",
+            sets: "3 × 12 each",
+            explanation: "Isolate and strengthen quadriceps.",
+            intensity: "Low"
+          },
+          {
+            name: "Wall Push-ups",
+            sets: "3 × 12",
+            explanation: "Lighter push variation for post-lunch energy.",
+            intensity: "Low"
+          },
+          {
+            name: "Neck Rolls",
+            sets: "5 each direction",
+            explanation: "Release neck tension accumulated during morning.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "15:30",
-        exercises: "Chair Squats, Desk Plank, Wrist Circles",
-        sets: "3 × 20 / 2 × 45s / 10 each direction",
-        explanation: "Afternoon strength and stability work.",
-        intensity: "High"
+        exercises: [
+          {
+            name: "Chair Squats",
+            sets: "3 × 20",
+            explanation: "Second leg session for endurance.",
+            intensity: "High"
+          },
+          {
+            name: "Desk Plank",
+            sets: "2 × 45s",
+            explanation: "Core stability to finish the afternoon strong.",
+            intensity: "High"
+          },
+          {
+            name: "Wrist Circles",
+            sets: "10 each direction",
+            explanation: "Prevent repetitive strain from typing.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "17:00",
-        exercises: "Standing Quad Stretch, Chest Doorway Stretch, Deep Breathing",
-        sets: "2 × 30s each / 2 × 30s / 5 breaths",
-        explanation: "Cool down and prepare body for end of workday.",
-        intensity: "Low"
+        exercises: [
+          {
+            name: "Standing Quad Stretch",
+            sets: "2 × 30s each",
+            explanation: "Release quadriceps after leg work.",
+            intensity: "Low"
+          },
+          {
+            name: "Chest Doorway Stretch",
+            sets: "2 × 30s",
+            explanation: "Open chest to restore posture.",
+            intensity: "Low"
+          },
+          {
+            name: "Deep Breathing",
+            sets: "5 breaths",
+            explanation: "Cool down and transition out of work mode.",
+            intensity: "Low"
+          }
+        ]
       }
     ]
   };
@@ -182,45 +370,141 @@ function generateStretchingRoutine() {
     blocks: [
       {
         time: "09:00",
-        exercises: "Neck Stretches (all directions), Shoulder Rolls",
-        sets: "30s each / 10 forward, 10 back",
-        explanation: "Release morning tension in neck and shoulders.",
-        intensity: "Low"
+        exercises: [
+          {
+            name: "Neck Stretches - Forward",
+            sets: "30s",
+            explanation: "Release tension in back of neck.",
+            intensity: "Low"
+          },
+          {
+            name: "Neck Stretches - Sides",
+            sets: "30s each",
+            explanation: "Stretch lateral neck muscles.",
+            intensity: "Low"
+          },
+          {
+            name: "Shoulder Rolls",
+            sets: "10 forward, 10 back",
+            explanation: "Mobilize shoulder girdle.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "10:30",
-        exercises: "Seated Spinal Twist, Side Bends, Cat-Cow (standing)",
-        sets: "30s each side / 10 each / 10 reps",
-        explanation: "Restore spinal mobility and side body length.",
-        intensity: "Low"
+        exercises: [
+          {
+            name: "Seated Spinal Twist",
+            sets: "30s each side",
+            explanation: "Restore thoracic rotation.",
+            intensity: "Low"
+          },
+          {
+            name: "Side Bends",
+            sets: "10 each",
+            explanation: "Stretch lateral chain and improve side mobility.",
+            intensity: "Low"
+          },
+          {
+            name: "Standing Cat-Cow",
+            sets: "10 reps",
+            explanation: "Mobilize entire spine through flexion/extension.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "12:00",
-        exercises: "Hip Flexor Stretch, Hamstring Stretch, Calf Stretch",
-        sets: "45s each side / 45s each / 30s each",
-        explanation: "Open up lower body after morning sitting.",
-        intensity: "Low"
+        exercises: [
+          {
+            name: "Hip Flexor Stretch",
+            sets: "45s each side",
+            explanation: "Release psoas shortened by sitting.",
+            intensity: "Low"
+          },
+          {
+            name: "Hamstring Stretch",
+            sets: "45s each",
+            explanation: "Lengthen backs of legs.",
+            intensity: "Low"
+          },
+          {
+            name: "Calf Stretch",
+            sets: "30s each",
+            explanation: "Release lower leg tension.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "14:00",
-        exercises: "Doorway Chest Stretch, Tricep Stretch, Wrist Flexor Stretch",
-        sets: "45s / 30s each / 30s each",
-        explanation: "Release upper body tension from typing and mouse work.",
-        intensity: "Low"
+        exercises: [
+          {
+            name: "Doorway Chest Stretch",
+            sets: "45s",
+            explanation: "Open pectorals shortened by desk posture.",
+            intensity: "Low"
+          },
+          {
+            name: "Tricep Stretch",
+            sets: "30s each",
+            explanation: "Stretch back of arms.",
+            intensity: "Low"
+          },
+          {
+            name: "Wrist Flexor Stretch",
+            sets: "30s each",
+            explanation: "Prevent carpal tunnel syndrome.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "15:30",
-        exercises: "Figure-4 Glute Stretch, IT Band Stretch, Ankle Circles",
-        sets: "45s each / 30s each / 10 each direction",
-        explanation: "Deep lower body release for hip and leg health.",
-        intensity: "Low"
+        exercises: [
+          {
+            name: "Figure-4 Glute Stretch",
+            sets: "45s each",
+            explanation: "Deep hip external rotator release.",
+            intensity: "Low"
+          },
+          {
+            name: "IT Band Stretch",
+            sets: "30s each",
+            explanation: "Release lateral thigh tension.",
+            intensity: "Low"
+          },
+          {
+            name: "Ankle Circles",
+            sets: "10 each direction",
+            explanation: "Maintain ankle mobility.",
+            intensity: "Low"
+          }
+        ]
       },
       {
         time: "17:00",
-        exercises: "Full Body Reach, Gentle Backbend, Forward Fold",
-        sets: "5 reps / 30s hold / 60s hold",
-        explanation: "Full-body integration stretch to end the day.",
-        intensity: "Low"
+        exercises: [
+          {
+            name: "Full Body Reach",
+            sets: "5 reps",
+            explanation: "Decompress spine with overhead reach.",
+            intensity: "Low"
+          },
+          {
+            name: "Gentle Backbend",
+            sets: "30s hold",
+            explanation: "Counter forward flexion from entire day.",
+            intensity: "Low"
+          },
+          {
+            name: "Forward Fold",
+            sets: "60s hold",
+            explanation: "Full posterior chain release to end day.",
+            intensity: "Low"
+          }
+        ]
       }
     ]
   };
@@ -237,46 +521,83 @@ function generateQuickBreakRoutine() {
     description: 'Fast 5-minute movement breaks every hour',
     blocks: [
       {
-        time: "Every Hour",
-        exercises: "Stand and Walk in Place",
-        sets: "60 seconds",
-        explanation: "Get blood flowing and break static posture.",
-        intensity: "Low"
+        time: "Minute 1",
+        exercises: [
+          {
+            name: "Stand and Walk in Place",
+            sets: "60 seconds",
+            explanation: "Get blood flowing and break static posture.",
+            intensity: "Low"
+          }
+        ]
       },
       {
-        time: "+1 min",
-        exercises: "Desk Push-ups or Wall Push-ups",
-        sets: "10-15 reps",
-        explanation: "Quick upper body activation.",
-        intensity: "Medium"
+        time: "Minute 2",
+        exercises: [
+          {
+            name: "Desk Push-ups",
+            sets: "10-15 reps",
+            explanation: "Quick upper body activation.",
+            intensity: "Medium"
+          },
+          {
+            name: "Wall Push-ups (alternative)",
+            sets: "10-15 reps",
+            explanation: "Easier variation if desk push-ups too difficult.",
+            intensity: "Low"
+          }
+        ]
       },
       {
-        time: "+2 min",
-        exercises: "Chair Squats",
-        sets: "15 reps",
-        explanation: "Activate legs and glutes.",
-        intensity: "Medium"
+        time: "Minute 3",
+        exercises: [
+          {
+            name: "Chair Squats",
+            sets: "15 reps",
+            explanation: "Activate legs and glutes.",
+            intensity: "Medium"
+          }
+        ]
       },
       {
-        time: "+3 min",
-        exercises: "Standing Torso Twists",
-        sets: "20 total (10 each side)",
-        explanation: "Restore spinal rotation.",
-        intensity: "Low"
+        time: "Minute 4",
+        exercises: [
+          {
+            name: "Standing Torso Twists",
+            sets: "20 total (10 each)",
+            explanation: "Restore spinal rotation.",
+            intensity: "Low"
+          },
+          {
+            name: "Shoulder Rolls",
+            sets: "10 each direction",
+            explanation: "Release shoulder tension.",
+            intensity: "Low"
+          }
+        ]
       },
       {
-        time: "+4 min",
-        exercises: "Shoulder Rolls + Arm Circles",
-        sets: "10 each",
-        explanation: "Release shoulder tension.",
-        intensity: "Low"
-      },
-      {
-        time: "+5 min",
-        exercises: "Deep Breathing + Neck Stretches",
-        sets: "5 breaths / 30s",
-        explanation: "Reset nervous system and release neck.",
-        intensity: "Low"
+        time: "Minute 5",
+        exercises: [
+          {
+            name: "Arm Circles",
+            sets: "10 each direction",
+            explanation: "Mobilize shoulders.",
+            intensity: "Low"
+          },
+          {
+            name: "Deep Breathing",
+            sets: "5 breaths",
+            explanation: "Reset nervous system.",
+            intensity: "Low"
+          },
+          {
+            name: "Neck Stretches",
+            sets: "30s",
+            explanation: "Release neck tension to complete break.",
+            intensity: "Low"
+          }
+        ]
       }
     ]
   };
@@ -305,19 +626,32 @@ function generateRoutineSheet(routineData) {
     // Clear existing content
     sheet.clear();
 
-    // Build data array
+    // Build data array with individual exercises per row
     const data = [
-      ["Time", "Exercises", "Sets × Reps / Duration", "Explanation", "Intensity"]
+      ["Time", "Exercise", "Sets × Reps / Duration", "Explanation", "Intensity"]
     ];
 
-    routineData.blocks.forEach(block => {
-      data.push([
-        block.time,
-        block.exercises,
-        block.sets,
-        block.explanation,
-        block.intensity
-      ]);
+    // Track time block boundaries for formatting
+    const timeBlockStarts = [];
+
+    routineData.blocks.forEach((block, blockIndex) => {
+      block.exercises.forEach((exercise, exerciseIndex) => {
+        // Only show time for first exercise of each time block
+        const timeValue = exerciseIndex === 0 ? block.time : "";
+
+        // Mark where each time block starts (for border formatting)
+        if (exerciseIndex === 0) {
+          timeBlockStarts.push(data.length);
+        }
+
+        data.push([
+          timeValue,
+          exercise.name,
+          exercise.sets,
+          exercise.explanation,
+          exercise.intensity
+        ]);
+      });
     });
 
     // Write data
@@ -325,7 +659,7 @@ function generateRoutineSheet(routineData) {
     dataRange.setValues(data);
 
     // Apply formatting
-    formatRoutineSheet(sheet, data.length, routineData);
+    formatRoutineSheet(sheet, data.length, routineData, timeBlockStarts);
 
     // Add description at top
     sheet.insertRowBefore(1);
@@ -333,6 +667,7 @@ function generateRoutineSheet(routineData) {
       .setValue(`📌 ${routineData.description}`)
       .setBackground('#fff3cd')
       .setFontWeight('bold')
+      .setFontSize(11)
       .setHorizontalAlignment('center')
       .setVerticalAlignment('middle');
 
@@ -360,10 +695,11 @@ function generateRoutineSheet(routineData) {
 /**
  * Applies professional formatting to routine sheet
  * @param {Sheet} sheet - The sheet to format
- * @param {number} rows - Number of data rows
+ * @param {number} rows - Number of data rows (including header)
  * @param {Object} routineData - Routine data for context
+ * @param {Array} timeBlockStarts - Row indices where time blocks start
  */
-function formatRoutineSheet(sheet, rows, routineData) {
+function formatRoutineSheet(sheet, rows, routineData, timeBlockStarts) {
   const numCols = 5;
 
   // Header formatting (row 2 after description)
@@ -371,28 +707,42 @@ function formatRoutineSheet(sheet, rows, routineData) {
   headerRange.setBackground(CONFIG.COLORS.HEADER)
     .setFontColor(CONFIG.COLORS.HEADER_TEXT)
     .setFontWeight('bold')
+    .setFontSize(10)
     .setHorizontalAlignment('center')
     .setVerticalAlignment('middle');
 
   // Freeze header rows (description + header)
   sheet.setFrozenRows(2);
 
-  // Time column formatting
-  const timeRange = sheet.getRange(3, 1, rows - 1, 1);
-  timeRange.setBackground(CONFIG.COLORS.TIME_COL)
-    .setFontWeight('bold')
-    .setHorizontalAlignment('center');
-
-  // Alternating row colors for data
+  // Time column formatting (only cells with time values)
   for (let i = 3; i <= rows + 1; i++) {
-    if (i % 2 === 0) {
-      sheet.getRange(i, 2, 1, numCols - 1).setBackground(CONFIG.COLORS.ALT_ROW);
+    const timeCell = sheet.getRange(i, 1);
+    if (timeCell.getValue() !== "") {
+      timeCell.setBackground(CONFIG.COLORS.TIME_COL)
+        .setFontWeight('bold')
+        .setHorizontalAlignment('center')
+        .setVerticalAlignment('top');
     }
+  }
+
+  // Alternating row colors for time blocks
+  let currentBlockColor = false;
+  for (let i = 0; i < timeBlockStarts.length; i++) {
+    const startRow = timeBlockStarts[i] + 2; // +2 because of description row and 0-based index
+    const endRow = (i < timeBlockStarts.length - 1) ? timeBlockStarts[i + 1] + 1 : rows + 1;
+
+    if (currentBlockColor) {
+      for (let row = startRow; row <= endRow; row++) {
+        sheet.getRange(row, 2, 1, numCols - 1).setBackground(CONFIG.COLORS.ALT_ROW);
+      }
+    }
+    currentBlockColor = !currentBlockColor;
   }
 
   // Intensity column conditional formatting
   const intensityRange = sheet.getRange(3, 5, rows - 1, 1);
-  intensityRange.setHorizontalAlignment('center');
+  intensityRange.setHorizontalAlignment('center')
+    .setVerticalAlignment('middle');
 
   // Apply intensity color coding
   for (let i = 3; i <= rows + 1; i++) {
@@ -416,7 +766,7 @@ function formatRoutineSheet(sheet, rows, routineData) {
 
   // Set column widths
   sheet.setColumnWidth(1, 80);   // Time
-  sheet.setColumnWidth(2, 300);  // Exercises
+  sheet.setColumnWidth(2, 250);  // Exercise
   sheet.setColumnWidth(3, 180);  // Sets/Reps
   sheet.setColumnWidth(4, 350);  // Explanation
   sheet.setColumnWidth(5, 90);   // Intensity
@@ -424,15 +774,27 @@ function formatRoutineSheet(sheet, rows, routineData) {
   // Set row heights
   sheet.setRowHeight(2, 35); // Header
   for (let i = 3; i <= rows + 1; i++) {
-    sheet.setRowHeight(i, 70); // Data rows
+    sheet.setRowHeight(i, 50); // Data rows
   }
 
   // Add borders
   const allDataRange = sheet.getRange(2, 1, rows, numCols);
   allDataRange.setBorder(true, true, true, true, true, true, '#000000', SpreadsheetApp.BorderStyle.SOLID);
 
-  // Text wrapping
+  // Add thicker borders between time blocks
+  timeBlockStarts.forEach((blockStart, index) => {
+    if (index > 0) { // Skip first block
+      const rowNum = blockStart + 2; // +2 for description row and header
+      const blockBorderRange = sheet.getRange(rowNum, 1, 1, numCols);
+      blockBorderRange.setBorder(true, null, null, null, null, null, CONFIG.COLORS.TIME_BLOCK_BORDER, SpreadsheetApp.BorderStyle.SOLID_MEDIUM);
+    }
+  });
+
+  // Text wrapping and alignment
   sheet.getRange(2, 1, rows, numCols).setWrap(true);
+  sheet.getRange(3, 2, rows - 1, 1).setHorizontalAlignment('left').setVerticalAlignment('middle'); // Exercise names
+  sheet.getRange(3, 3, rows - 1, 1).setHorizontalAlignment('center').setVerticalAlignment('middle'); // Sets/Reps
+  sheet.getRange(3, 4, rows - 1, 1).setHorizontalAlignment('left').setVerticalAlignment('middle'); // Explanations
 }
 
 // ========================================
@@ -464,13 +826,15 @@ function createProgressTracker() {
     }
 
     // Header row
-    const headers = ['Date', 'Time', 'Routine Type', 'Exercises Completed', 'Notes', 'Energy Level (1-10)'];
+    const headers = ['Date', 'Time', 'Routine Type', 'Exercise', 'Completed', 'Notes', 'Energy Level (1-10)'];
     sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
 
     // Add sample data for demonstration
+    const today = new Date();
     const sampleData = [
-      [new Date(), '09:00', 'Core Routine', 'Pelvic Tilts, Breathing', 'Felt good!', 8],
-      [new Date(), '10:00', 'Core Routine', 'Leg Raises, Plank Press', 'Challenging', 7]
+      [today, '09:00', 'Core Routine', 'Seated Pelvic Tilts', '✓', 'Felt good!', 8],
+      [today, '09:00', 'Core Routine', 'Braced Belly Breathing', '✓', '', 8],
+      [today, '10:00', 'Core Routine', 'Chair Leg Raises', '✓', 'Challenging', 7]
     ];
     sheet.getRange(2, 1, sampleData.length, headers.length).setValues(sampleData);
 
@@ -484,14 +848,24 @@ function createProgressTracker() {
     sheet.setFrozenRows(1);
     sheet.autoResizeColumns(1, headers.length);
 
+    // Format date column
+    sheet.getRange(2, 1, 1000, 1).setNumberFormat('yyyy-mm-dd');
+
     // Add data validation for Energy Level
-    const energyRange = sheet.getRange(2, 6, 1000, 1);
+    const energyRange = sheet.getRange(2, 7, 1000, 1);
     const rule = SpreadsheetApp.newDataValidation()
       .requireNumberBetween(1, 10)
       .setAllowInvalid(false)
       .setHelpText('Enter a number between 1 and 10')
       .build();
     energyRange.setDataValidation(rule);
+
+    // Add checkbox for Completed column
+    const completedRange = sheet.getRange(2, 5, 1000, 1);
+    const checkboxRule = SpreadsheetApp.newDataValidation()
+      .requireCheckbox()
+      .build();
+    completedRange.setDataValidation(checkboxRule);
 
     sheet.activate();
 
@@ -660,6 +1034,7 @@ function showHelp() {
         <li>Click <code>Exercise Routines</code> menu at top</li>
         <li>Select your desired routine</li>
         <li>A new sheet will be created with your schedule</li>
+        <li>Each exercise appears on its own row for easy tracking</li>
         <li>Use Progress Tracker to log your workouts</li>
         <li>Customize times using the Settings option</li>
       </ol>
@@ -672,6 +1047,7 @@ function showHelp() {
         <li>Start with Quick Breaks if you're new to desk exercises</li>
         <li>Mix routines throughout the week for variety</li>
         <li>Track your energy levels to find optimal times</li>
+        <li>Check off exercises as you complete them</li>
       </ul>
     </div>
 
@@ -679,7 +1055,8 @@ function showHelp() {
       <h3>Features</h3>
       <ul>
         <li>🎨 Color-coded intensity levels</li>
-        <li>📊 Progress tracking</li>
+        <li>📋 Individual row per exercise</li>
+        <li>📊 Progress tracking with checkboxes</li>
         <li>⚙️ Customizable schedules</li>
         <li>📄 PDF export for printing</li>
       </ul>
