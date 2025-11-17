@@ -1,0 +1,18 @@
+{
+  "description": "Seed URLs for n8n knowledge base crawler",
+  "urls": [
+    "https://docs.n8n.io/",
+    "https://docs.n8n.io/workflows/",
+    "https://docs.n8n.io/integrations/builtin/",
+    "https://docs.n8n.io/integrations/builtin/core-nodes/",
+    "https://docs.n8n.io/integrations/builtin/app-nodes/",
+    "https://docs.n8n.io/code/",
+    "https://docs.n8n.io/hosting/",
+    "https://docs.n8n.io/try-it-out/",
+    "https://community.n8n.io/c/questions/6",
+    "https://community.n8n.io/c/share-workflows/2",
+    "https://community.n8n.io/c/tutorials/21",
+    "https://n8n.io/blog/",
+    "https://github.com/n8n-io/n8n"
+  ]
+}
